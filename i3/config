@@ -1,0 +1,20 @@
+# Gaps
+gaps inner 3
+for_window [class=".*"] border pixel 1
+client.focused #CC3231 #CC3231 #CC3231 #CC3231
+client.focused_inactive #000000 #000000 #000000 #000000
+client.unfocused #000000 #000000 #000000 #000000
+
+smart_borders on
+
+## Startup
+# Polybar 
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Picom
+exec_always --no-startup-id picom --no-fading-openclose -D 0
+
+## Bindings
+# start rofi
+bindsym $mod+d exec --no-startup-id rofi -config $HOME/.config/rofi/themes/oxide.rasi -show run
+# rofi with another theme
+bindsym $mod+Shift+d exec $HOME/.config/rofi/launchers/type-2/launcher.sh
